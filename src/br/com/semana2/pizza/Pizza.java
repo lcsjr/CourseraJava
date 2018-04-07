@@ -6,27 +6,29 @@ import java.util.Map;
 public class Pizza {
 	
 	Map<String, Integer> listaIngredientes = new HashMap<String, Integer>();
+	int valorPizza;
+	int qtdeIngredientes;
 	static int ingredientes ;
 	
 	void adicionaIngrediente( String ingrediente ) {
-		listaIngredientes.put(ingrediente, 1);
+		qtdeIngredientes += 1;
+		getPreco();
 		ingredientes = contabilizaIngrediente();
-		
+		listaIngredientes.put(ingrediente, qtdeIngredientes );
 	}
 	
-	public double getPreco() {
+	public int getPreco() {
 	
-		double preco = 0;
-		
-		if (ingredientes <= 2) {
-			preco = 15;
-		} else if ( ingredientes >= 2 || ingredientes <=5 ) {
-			preco = 20;
-		}else if (ingredientes > 5) {
-			preco = 23;
+
+		if (qtdeIngredientes <= 2) {
+			valorPizza = 15;
+		} else if ( qtdeIngredientes >= 2 || qtdeIngredientes <=5 ) {
+			valorPizza = 20;
+		}else if (qtdeIngredientes > 5) {
+			valorPizza = 23;
 		}
 		
-		return preco;
+		return valorPizza;
 	}
 	
 	static int contabilizaIngrediente() {
