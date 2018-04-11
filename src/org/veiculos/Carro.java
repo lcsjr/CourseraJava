@@ -2,23 +2,23 @@ package org.veiculos;
 
 public class Carro {
 	
-	String nome;
-	int potencia;
-	int velocidade;
+	public String nome;
+	public int potencia;
+	public int velocidade;
 
-	void acelerar() {
+	public void acelerar() {
 		velocidade += potencia;
 	}
 	
-	void frear() {
+	public void frear() {
 		velocidade *= 0.5;
 	}
 	
-	int getVelocidade() {
+	public int getVelocidade() {
 		return velocidade;
 	}
 	
-	void imprimir() {
+	public void imprimir() {
 		System.out.println("O Carro "+ nome + " está a velocidade de " + this.getVelocidade() +" km/h");
 	}
 }
