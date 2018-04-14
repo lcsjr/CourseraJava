@@ -9,16 +9,18 @@ public class CarrinhoDeCompras {
 	int valorTotal;
 	
 	
-	void adicionaItem( Map<String, Integer> listaIngredientes, int valor ) {
+	public boolean adicionaItem( Map<String, Integer> listaIngredientes, int valor ) {
 
 		if (listaIngredientes.isEmpty() ){
 			System.out.println("Não é possível Adicionar uma pizza sem ingredientes!");
 			System.out.println();
-			return ;
+			return false;
 		}
 		
 		listaCompras.put(listaIngredientes.toString(), valor);
 		valorTotal += valor;
+		
+		return true;
 	}
 	
 }

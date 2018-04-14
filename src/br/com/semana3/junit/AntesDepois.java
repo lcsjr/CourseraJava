@@ -1,4 +1,4 @@
-package br.com.com.semana3.junit;
+package br.com.semana3.junit;
 
 import static org.junit.Assert.*;
 
