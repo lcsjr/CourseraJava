@@ -1,7 +1,5 @@
 package br.com.semana5.avaliacao;
 
-import org.junit.Before;
-
 public class Autoridade implements FormatadorNome  {
 	
 	private String nome;
