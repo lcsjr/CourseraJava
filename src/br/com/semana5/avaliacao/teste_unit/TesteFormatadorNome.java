@@ -5,6 +5,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import br.com.semana5.avaliacao.Autoridade;
+import br.com.semana5.avaliacao.ComTitulo;
+import br.com.semana5.avaliacao.Informal;
+import br.com.semana5.avaliacao.Respeitoso;
 
 
 public class TesteFormatadorNome {
@@ -17,30 +20,27 @@ public class TesteFormatadorNome {
 	
 	@Test
 	public void testInformal() {
-		Autoridade informal = new Autoridade(nome);		
-		assertEquals(nome, informal.getTratamento(1));
+		Informal informal = new Informal();
+		Autoridade a = new Autoridade(nome,sobrenome,informal);
+		System.out.println( a.getTratamento());
+		assertEquals(nome,a.getTratamento());
 	}
-	
+
 	@Test
 	public void testRespeitoso() {
+		Respeitoso respeitoso = new Respeitoso(sexo);
+		Autoridade b = new Autoridade(nome,sobrenome,respeitoso);
+		System.out.println( b.getTratamento());
+		assertEquals("Sr. "+sobrenome,b.getTratamento());
 		
-		String tratam;
-		
-		if ("M".equals(sexo)) {
-			tratam = "Sr. ";
-		}else {
-			tratam = "Sra. ";
-		}
-		
-		Autoridade informal = new Autoridade(sexo, sobrenome);
-		assertEquals(tratam + sobrenome, informal.getTratamento(2));
 	}
 	
 	@Test
 	public void testComTitulo() {
-		
-		Autoridade informal = new Autoridade(titulo, nome, sobrenome);
-		assertEquals(titulo + ' ' + nome + sobrenome, informal.getTratamento(3));
+		ComTitulo comTitulo = new ComTitulo(titulo);
+		Autoridade c = new Autoridade(nome,sobrenome,comTitulo);
+		System.out.println( c.getTratamento());
+		assertEquals(titulo+ ' '+nome+' '+sobrenome,c.getTratamento());
 	}
 
 }
