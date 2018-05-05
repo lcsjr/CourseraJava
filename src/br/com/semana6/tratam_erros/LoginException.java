@@ -1,0 +1,17 @@
+package br.com.semana6.tratam_erros;
+
+public class LoginException extends Exception {
+	
+	private String login;
+
+	public LoginException(String message, String login) {
+		super(message);
+		this.login = login;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	
+}
